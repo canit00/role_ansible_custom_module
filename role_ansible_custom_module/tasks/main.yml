@@ -1,0 +1,9 @@
+---
+# tasks file for role_ansible_custom_module
+- name: Check disk utilization %
+  diskcheck_fedora:
+    volumes: "{{ item }}"
+  loop:
+  - "/var/lib/docker"
+  - "/var/lib/openshift"
+  - "/var/lib/containers"
